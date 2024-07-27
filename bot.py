@@ -38,7 +38,7 @@ print(url)
 
 # # 채팅방에 메시지 전송
 def kakao_sendtext(chatroom_name, text):
-    # # 핸들 _ 채팅방
+    # 핸들 _ 채팅방
     hwndMain = win32gui.FindWindow( None, chatroom_name)
     hwndEdit = win32gui.FindWindowEx( hwndMain, None, "RICHEDIT50W", None)
     # hwndListControl = win32gui.FindWindowEx( hwndMain, None, "EVA_VH_ListControl_Dblclk", None)
@@ -86,11 +86,11 @@ def open_chatroom(chatroom_name):
 
     # Edit에 검색
     win32api.SendMessage(hwndkakao_edit3, win32con.WM_SETTEXT, 0, chatroom_name)
-    time.sleep(1)   # 안정성 위해 필요
+    time.sleep(1)
     SendReturn(hwndkakao_edit3)
     time.sleep(1)
 
-# # 클립보드에 저장하기
+# 클립보드에 저장하기
 def send_to_clipboard(clip_type, data): 
     win32clipboard.OpenClipboard() 
     win32clipboard.EmptyClipboard() 
@@ -109,15 +109,6 @@ def weather():
     for k, v in rain.items():
         print("{}시에 예상 강수량 {}".format(k, v))
         ad.append("{}시에 예상 강수량 {}".format(k, v))
-
-    # 네이버 일기예보
-    #context = ssl._create_unverified_context()
-    #webpage = urllib.request.urlopen('https://search.naver.com/search.naver?sm=tab_sug.asiw&where=nexearch&ssc=tab.nx.all&query=%EB%8F%84%EB%B4%89%EB%8F%99+%EB%82%A0%EC%94%A8&oquery=%EC%84%9C%EC%9A%B8%EB%82%A0%EC%94%A8&tqi=iQRYBsqo1LVss5%2BZz%2FGssssssWo-430873&acq=%EB%8F%84%EB%B4%89%EB%8F%99+%EB%82%A0%EC%94%A8&acr=1&qdt=0',context=context)
-    #soup = BeautifulSoup(webpage, 'html.parser')
-    #temps = soup.find('div','temperature_text')
-    #summary = soup.find('p','summary')
-    #print(temps)
-    #print(summary.text.strip())
 
 
 
